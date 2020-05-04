@@ -8,10 +8,19 @@ public class MoveScript : MonoBehaviour
     public float forwardSpeed = 10f;
     public float fSpeedUp = 0.005f;
     public float maxFSpeed = 30f;
-    public float speed = 1f;
-    public Rigidbody rb;
-    public Vector3 moveForward;
+    public float speed = 10f;
+    public float curMoveSpeed;
 
+    public Rigidbody rb;
+
+    public Vector3 moveForward;
+    public Vector3 hMovement;
+
+    [SerializeField]
+    bool move;
+
+    [SerializeField]
+    float multi = 50f;
 
     void Start()
     {
@@ -21,13 +30,25 @@ public class MoveScript : MonoBehaviour
 
     void Update()
     {
+        hMovement = new Vector3(0f, 0f, Input.GetAxis("Horizontal")) * Time.deltaTime;
+        curMoveSpeed = forwardSpeed * speed * multi;
         Speedup();
+        Debug.Log(Input.GetAxis("Horizontal"));
+
     }
 
     private void FixedUpdate()
     {
-        this.rb.velocity = new Vector3(forwardSpeed, 0, 0);
         //driveforward(moveForward);
+        MoveCar(hMovement);
+    }
+
+    void MoveCar(Vector3 direction)
+    {
+        //Debug.Log("move car being called");
+        this.rb.AddForce(new Vector3(forwardSpeed, 0, 0) * Time.deltaTime * multi);
+        rb.AddForce(direction * curMoveSpeed *-1);
+        //Debug.Log("force being added");
     }
 
     void Speedup()
