@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveScript : MonoBehaviour
 {
 
-    public float forwardSpeed = 10f;
+    public float forwardSpeed = 0f;
     public float fSpeedUp = 0.005f;
     public float maxFSpeed = 30f;
     public float speed = 10f;
@@ -55,6 +55,15 @@ public class MoveScript : MonoBehaviour
     {
         if (forwardSpeed <= maxFSpeed)
         {
+            if (forwardSpeed <= maxFSpeed/1.5)
+            {
+                fSpeedUp = 0.01f;
+            }
+            else
+            {
+                fSpeedUp = 0.0005f;
+            }
+
             forwardSpeed += fSpeedUp;
         }
     }
