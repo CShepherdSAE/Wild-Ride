@@ -5,11 +5,14 @@ using UnityEngine;
 public class FinishScript : MonoBehaviour
 {
 
+    public MoveScript MoveScript;
+
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.CompareTag("Car"))
-        //{
-        //    //Debug.Log("CompareTag Works");
-        //}
+        if (other.gameObject.tag == "Car")
+        {
+            MoveScript.forwardSpeed = 0f;
+            MoveScript.accelSp1 = 0f;
+        }
     }
 }
