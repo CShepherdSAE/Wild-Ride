@@ -6,34 +6,31 @@ public class MoveScript : MonoBehaviour
 {
 
     public float forwardSpeed = 0f;
-    public float fSpeedUp = 0.005f;
-    public float maxFSpeed = 30f;
-    public float speed = 10f;
+    public float fSpeedUp;
+    public float maxFSpeed;
+    public float speed;
     public float curMoveSpeed;
 
     public Rigidbody rb;
 
-    public Vector3 moveForward;
+    //public Vector3 moveForward;
     public Vector3 hMovement;
 
-    [SerializeField]
     bool move;
 
-    [SerializeField]
     float multi = 50f;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        //rb.isKinematic = true; (only needed if useing move position)
     }
 
     void Update()
     {
-        hMovement = new Vector3(0f, 0f, Input.GetAxis("Horizontal")) * Time.deltaTime;
+        hMovement = new Vector3(forwardSpeed, 0f, Input.GetAxis("Horizontal") * -1) * Time.deltaTime;
         curMoveSpeed = forwardSpeed * speed * multi;
         Speedup();
-        Debug.Log(Input.GetAxis("Horizontal"));
+        //Debug.Log(Input.GetAxis("Horizontal"));
 
     }
 
@@ -43,12 +40,12 @@ public class MoveScript : MonoBehaviour
         MoveCar(hMovement);
     }
 
+
+
     void MoveCar(Vector3 direction)
     {
-        //Debug.Log("move car being called");
-        this.rb.AddForce(new Vector3(forwardSpeed, 0, 0) * Time.deltaTime * multi);
-        rb.AddForce(direction * curMoveSpeed *-1);
-        //Debug.Log("force being added");
+        this.rb.velocity = (direction * Time.deltaTime * multi);
+        rb.velocity = (direction * curMoveSpeed);
     }
 
     void Speedup()
@@ -57,16 +54,33 @@ public class MoveScript : MonoBehaviour
         {
             if (forwardSpeed <= maxFSpeed/1.5)
             {
-                fSpeedUp = 0.01f;
+                fSpeedUp = 0.0075f;
             }
             else
             {
-                fSpeedUp = 0.0005f;
+                fSpeedUp = 0.00025f;
             }
 
             forwardSpeed += fSpeedUp;
         }
     }
+
+    //old code
+
+    //was in start
+    //rb.isKinematic = true; (only needed if useing move position)
+
+    //moved to another script
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    forwardSpeed = 0f;
+    //}
+
+    //from void MoveCar()
+    //Debug.Log("move car being called");
+    //this.rb.AddForce(new Vector3(forwardSpeed, 0, 0) * Time.deltaTime * multi);
+    //rb.AddForce(direction * curMoveSpeed *-1);
+    //Debug.Log("force being added");
 
     //void driveforward(Vector3 direction)
     //{
