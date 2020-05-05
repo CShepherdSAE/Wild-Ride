@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollideScript : MonoBehaviour
 {
 
-    MoveScript MoveScript;
+    public MoveScript MoveScript;
 
     public GameObject Car;
 
@@ -18,6 +18,7 @@ public class CollideScript : MonoBehaviour
     {
         MoveScript.forwardSpeed = 0f;
         Debug.Log("speed set in Collide Script");
+        Destroy(gameObject);
     }
 
 }

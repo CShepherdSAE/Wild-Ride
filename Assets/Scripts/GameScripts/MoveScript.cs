@@ -10,6 +10,8 @@ public class MoveScript : MonoBehaviour
     public float maxFSpeed;
     public float speed;
     public float curMoveSpeed;
+    public float accelSp1;
+    public float accelSp2;
 
     public Rigidbody rb;
 
@@ -54,11 +56,11 @@ public class MoveScript : MonoBehaviour
         {
             if (forwardSpeed <= maxFSpeed/1.5)
             {
-                fSpeedUp = 0.0075f;
+                fSpeedUp = accelSp1;
             }
             else
             {
-                fSpeedUp = 0.00025f;
+                fSpeedUp = accelSp2;   
             }
 
             forwardSpeed += fSpeedUp;
