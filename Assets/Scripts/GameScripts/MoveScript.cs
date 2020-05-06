@@ -9,7 +9,11 @@ public class MoveScript : MonoBehaviour
     public float fSpeedUp;
     public float maxFSpeed;
     public float speed;
+    public float sideSpeed;
+    public float minSideMove;
+    public float sideSpeedMulti = 0.1f;
     public float curMoveSpeed;
+    public float spStage;
     public float accelSp1;
     public float accelSp2;
 
@@ -29,7 +33,7 @@ public class MoveScript : MonoBehaviour
 
     void Update()
     {
-        hMovement = new Vector3(forwardSpeed, 0f, Input.GetAxis("Horizontal") * -1) * Time.deltaTime;
+        hMovement = new Vector3(forwardSpeed, 0f, Input.GetAxis("Horizontal") * sideSpeed * -1) * Time.deltaTime;
         curMoveSpeed = forwardSpeed * speed * multi;
         Speedup();
         //Debug.Log(Input.GetAxis("Horizontal"));
@@ -42,8 +46,6 @@ public class MoveScript : MonoBehaviour
         MoveCar(hMovement);
     }
 
-
-
     void MoveCar(Vector3 direction)
     {
         this.rb.velocity = (direction * Time.deltaTime * multi);
@@ -54,7 +56,7 @@ public class MoveScript : MonoBehaviour
     {
         if (forwardSpeed <= maxFSpeed)
         {
-            if (forwardSpeed <= maxFSpeed/1.5)
+            if (forwardSpeed <= maxFSpeed/spStage)
             {
                 fSpeedUp = accelSp1;
             }
@@ -64,6 +66,15 @@ public class MoveScript : MonoBehaviour
             }
 
             forwardSpeed += fSpeedUp;
+        }
+
+        if (forwardSpeed <= minSideMove)
+        {
+            sideSpeed = 0f;
+        }
+        else
+        {
+            sideSpeed = forwardSpeed * sideSpeedMulti;
         }
     }
 

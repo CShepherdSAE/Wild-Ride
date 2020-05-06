@@ -9,6 +9,8 @@ public class CollideScript : MonoBehaviour
 
     public GameObject Car;
 
+    //private Coroutine playCollideAnim;
+
     private void Start()
     {
         
@@ -18,7 +20,13 @@ public class CollideScript : MonoBehaviour
     {
         MoveScript.forwardSpeed = 0f;
         Debug.Log("speed set in Collide Script");
+        //StartCoroutine(PlayAnimation);
         Destroy(gameObject);
     }
+
+    //private IEnumerator PlayAnimation()
+    //{
+
+    //}
 
 }
