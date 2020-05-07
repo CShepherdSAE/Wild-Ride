@@ -54,27 +54,30 @@ public class MoveScript : MonoBehaviour
 
     void Speedup()
     {
-        if (forwardSpeed <= maxFSpeed)
+        if (!PauseLevelScript.gameIsPaused)
         {
-            if (forwardSpeed <= maxFSpeed/spStage)
+            if (forwardSpeed <= maxFSpeed)
             {
-                fSpeedUp = accelSp1;
+                if (forwardSpeed <= maxFSpeed / spStage)
+                {
+                    fSpeedUp = accelSp1;
+                }
+                else
+                {
+                    fSpeedUp = accelSp2;
+                }
+
+                forwardSpeed += fSpeedUp;
+            }
+
+            if (forwardSpeed <= minSideMove)
+            {
+                sideSpeed = 0f;
             }
             else
             {
-                fSpeedUp = accelSp2;   
+                sideSpeed = forwardSpeed * sideSpeedMulti;
             }
-
-            forwardSpeed += fSpeedUp;
-        }
-
-        if (forwardSpeed <= minSideMove)
-        {
-            sideSpeed = 0f;
-        }
-        else
-        {
-            sideSpeed = forwardSpeed * sideSpeedMulti;
         }
     }
 

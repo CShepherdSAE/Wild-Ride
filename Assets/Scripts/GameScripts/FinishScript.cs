@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FinishScript : MonoBehaviour
 {
@@ -24,16 +25,20 @@ public class FinishScript : MonoBehaviour
     public void LoadMenu()
     {
         Debug.Log("Menu loading... ");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadLevelSelect()
     {
         Debug.Log("Level Select loading... ");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void RestartLevel()
     {
         Debug.Log("Reloading Level... ");
+        ////change to use variable
+        //SceneManager.LoadScene("GameScene");
     }
 
 }
