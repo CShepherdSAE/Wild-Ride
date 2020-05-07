@@ -9,7 +9,7 @@ public class CollideScript : MonoBehaviour
 
     public GameObject Car;
 
-    public Animator Anim;
+    public Animator anim;
 
     private void Start()
     {
@@ -21,13 +21,13 @@ public class CollideScript : MonoBehaviour
         MoveScript.forwardSpeed = 0f;
         Debug.Log("speed set in Collide Script");
         StartCoroutine(PlayAnimation());
-        Destroy(gameObject);
     }
 
     private IEnumerator PlayAnimation()
     {
-        yield return new WaitForSeconds(5f);
-        Debug.Log("it did the thing");
+        anim.SetBool("Destroy", true);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
 }

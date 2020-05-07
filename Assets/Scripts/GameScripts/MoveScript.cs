@@ -22,7 +22,7 @@ public class MoveScript : MonoBehaviour
     //public Vector3 moveForward;
     public Vector3 hMovement;
 
-    bool move;
+    //bool move;
 
     float multi = 50f;
 

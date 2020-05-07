@@ -8,16 +8,32 @@ public class FinishScript : MonoBehaviour
 
     public MoveScript MoveScript;
 
-    public GameObject finishLineText;
+    public GameObject finishLineUI;
+    public GameObject healthBarUI;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Car")
         {
-            MoveScript.forwardSpeed = 0f;
-            MoveScript.accelSp1 = 0f;
-
-
+            healthBarUI.SetActive(false);
+            finishLineUI.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
+
+    public void LoadMenu()
+    {
+        Debug.Log("Menu loading... ");
+    }
+
+    public void LoadLevelSelect()
+    {
+        Debug.Log("Level Select loading... ");
+    }
+
+    public void RestartLevel()
+    {
+        Debug.Log("Reloading Level... ");
+    }
+
 }
