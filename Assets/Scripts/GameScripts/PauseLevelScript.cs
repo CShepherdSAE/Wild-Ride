@@ -42,12 +42,14 @@ public class PauseLevelScript : MonoBehaviour
     public void LoadMenu()
     {
         Debug.Log("Menu loading... ");
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void RestartLevel()
     {
         Debug.Log("Reloading Level... ");
+        //Time.timeScale = 1f;
         ////change to use variable
         //SceneManager.LoadScene("GameScene");
     }
@@ -55,6 +57,7 @@ public class PauseLevelScript : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit Game... ");
+        Time.timeScale = 1f;
         Application.Quit();
     }
 

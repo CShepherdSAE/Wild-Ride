@@ -25,18 +25,21 @@ public class FinishScript : MonoBehaviour
     public void LoadMenu()
     {
         Debug.Log("Menu loading... ");
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadLevelSelect()
     {
         Debug.Log("Level Select loading... ");
+        Time.timeScale = 1f;s
         SceneManager.LoadScene("LevelSelect");
     }
 
     public void RestartLevel()
     {
         Debug.Log("Reloading Level... ");
+        //Time.timeScale = 1f;
         ////change to use variable
         //SceneManager.LoadScene("GameScene");
     }
