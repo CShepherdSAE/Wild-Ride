@@ -32,16 +32,18 @@ public class FinishScript : MonoBehaviour
     public void LoadLevelSelect()
     {
         Debug.Log("Level Select loading... ");
-        Time.timeScale = 1f;s
+        Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelect");
+        PauseLevelScript.gameIsPaused = false;
     }
 
     public void RestartLevel()
     {
         Debug.Log("Reloading Level... ");
-        //Time.timeScale = 1f;
-        ////change to use variable
-        //SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
+        //change to use variable
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PauseLevelScript.gameIsPaused = false;
     }
 
 }

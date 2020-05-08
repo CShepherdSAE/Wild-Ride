@@ -43,15 +43,18 @@ public class PauseLevelScript : MonoBehaviour
     {
         Debug.Log("Menu loading... ");
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu"); 
+        gameIsPaused = false;
     }
 
     public void RestartLevel()
     {
         Debug.Log("Reloading Level... ");
-        //Time.timeScale = 1f;
-        ////change to use variable
-        //SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
+        //change to use variable
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log(Time.timeScale);
+        gameIsPaused = false;
     }
 
     public void QuitGame()

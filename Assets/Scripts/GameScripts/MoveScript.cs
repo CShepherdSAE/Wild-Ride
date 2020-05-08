@@ -29,6 +29,7 @@ public class MoveScript : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        Debug.Log("start happened");
     }
 
     void Update()
@@ -37,7 +38,6 @@ public class MoveScript : MonoBehaviour
         curMoveSpeed = forwardSpeed * speed * multi;
         Speedup();
         //Debug.Log(Input.GetAxis("Horizontal"));
-
     }
 
     private void FixedUpdate()
