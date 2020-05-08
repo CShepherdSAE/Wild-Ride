@@ -5,20 +5,17 @@ using UnityEngine;
 public class CollideScript : MonoBehaviour
 {
 
-    public MoveScript MoveScript;
+    public MoveScript moveScript;
+    public ScoreScript scoreScript;
 
     public GameObject Car;
 
     public Animator anim;
 
-    private void Start()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        MoveScript.forwardSpeed = 0f;
+        moveScript.forwardSpeed = 0f;
+        scoreScript.LoseScore();
         Debug.Log("speed set in Collide Script");
         StartCoroutine(PlayAnimation());
     }
@@ -29,5 +26,4 @@ public class CollideScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
-
 }

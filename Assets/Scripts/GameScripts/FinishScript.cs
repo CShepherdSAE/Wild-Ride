@@ -12,6 +12,8 @@ public class FinishScript : MonoBehaviour
     public GameObject finishLineUI;
     public GameObject healthBarUI;
 
+    public ScoreScript scoreScript;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Car")
@@ -19,6 +21,7 @@ public class FinishScript : MonoBehaviour
             healthBarUI.SetActive(false);
             finishLineUI.SetActive(true);
             Time.timeScale = 0f;
+            scoreScript.DisplayScore();
         }
     }
 
