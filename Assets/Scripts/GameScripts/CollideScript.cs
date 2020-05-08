@@ -6,11 +6,16 @@ public class CollideScript : MonoBehaviour
 {
 
     public MoveScript moveScript;
-    public ScoreScript scoreScript;
+    ScoreScript scoreScript;
 
     public GameObject Car;
 
     public Animator anim;
+
+    private void Start()
+    {
+        scoreScript = FindObjectOfType<ScoreScript>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

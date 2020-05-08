@@ -23,6 +23,7 @@ public class ScoreScript : MonoBehaviour
         Debug.Log("current Score = " + currentScore);
     }
 
+    
     public void LoseScore()
     {
         currentScore -= decreaseScoreAmount;
