@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HealthBarScript : MonoBehaviour
 {
 
+    public GameObject losePanel;
+
     public Slider slider;
 
     public void SetMaxHealth(int health)
@@ -18,5 +20,10 @@ public class HealthBarScript : MonoBehaviour
     public void SetHealth(int health)
     {
         slider.value = health;
+
+        if (health <= 0)
+        {
+            losePanel.SetActive(true);
+        }
     }
 }
