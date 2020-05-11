@@ -22896,9 +22896,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39f9dadd5d29d842bffaba358711236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialScore: 300
+  initialScore: 100000
   currentScore: 0
-  decreaseScoreAmount: 25
+  decreaseScoreAmount: 2500
   scoreText: {fileID: 1005303035}
 --- !u!1 &1452992377
 GameObject:
