@@ -24,6 +24,7 @@ public class HealthBarScript : MonoBehaviour
         if (health <= 0)
         {
             losePanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
