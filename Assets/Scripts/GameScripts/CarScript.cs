@@ -8,6 +8,10 @@ public class CarScript : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
 
+    public int healValue = 1;
+    public int obsticleDamageValue = 2;
+    public int wallDamageValue = 1;
+
     public HealthBarScript healthBar;
 
     void Start()
@@ -20,12 +24,12 @@ public class CarScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obsticle")
         {
-            TakeDamage(2);
+            TakeDamage(obsticleDamageValue);
             Debug.Log("hit obsticle");
         }
         else if(collision.gameObject.tag == "Wall")
         {
-            TakeDamage(1);
+            TakeDamage(wallDamageValue);
             Debug.Log("hit wall");
         }
     }
@@ -35,5 +39,21 @@ public class CarScript : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+
+        Debug.Log("Current health = " + currentHealth);
+    }
+
+    public void HealDamage(int heal)
+    {  
+        if(currentHealth < maxHealth)
+        {
+            Debug.Log("heal if statment entered");
+
+            currentHealth += heal;
+
+            healthBar.SetHealth(currentHealth);
+
+            Debug.Log("Current health = " + currentHealth);
+        }
     }
 }

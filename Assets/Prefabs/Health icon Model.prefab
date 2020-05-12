@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8929141186389067062}
   - component: {fileID: 8929141186389067061}
   m_Layer: 0
-  m_Name: Health icon
-  m_TagString: Untagged
+  m_Name: Health icon Model
+  m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

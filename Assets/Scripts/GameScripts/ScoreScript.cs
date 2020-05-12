@@ -13,7 +13,7 @@ public class ScoreScript : MonoBehaviour
     public int initialScore;
     public int currentScore;
     public int decreaseScoreAmount;
-    //public int increaseScoreAmount;
+    public int increaseScoreAmount;
 
     public Text scoreText;
 
@@ -23,6 +23,11 @@ public class ScoreScript : MonoBehaviour
         Debug.Log("current Score = " + currentScore);
     }
 
+    public void IncreaseScore()
+    {
+        currentScore += increaseScoreAmount;
+        Debug.Log("current Score = " + currentScore);
+    }
     
     public void LoseScore()
     {

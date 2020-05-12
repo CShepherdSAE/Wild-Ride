@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7597142491448527246}
   - component: {fileID: 1232866835626413706}
+  - component: {fileID: 5560007671200015087}
+  - component: {fileID: 7449192112295712976}
   m_Layer: 0
   m_Name: Health icon
   m_TagString: Untagged
@@ -51,6 +53,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5560007671200015087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249646068711661177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ca0739d3dcdcb4d980085a31f44912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7449192112295712976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249646068711661177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &27455007087098131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,17 +93,17 @@ PrefabInstance:
     - target: {fileID: 8929141186389067049, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8929141186389067049, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8929141186389067049, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8929141186389067049, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
@@ -123,11 +150,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health icon Model
       objectReference: {fileID: 0}
-    - target: {fileID: 8929141186389067060, guid: 7507db0ab2f14c3448df399101effe0a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Health
-      objectReference: {fileID: 0}
     - target: {fileID: 8929141186389067061, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
       propertyPath: m_Mesh
@@ -136,12 +158,17 @@ PrefabInstance:
     - target: {fileID: 8929141186389067061, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
       propertyPath: m_Convex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8929141186389067061, guid: 7507db0ab2f14c3448df399101effe0a,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929141186389067061, guid: 7507db0ab2f14c3448df399101effe0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7507db0ab2f14c3448df399101effe0a, type: 3}
