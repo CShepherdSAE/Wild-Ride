@@ -29,13 +29,16 @@ public class PauseLevelScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (wantToQuit)
+            if (!gameIsPaused)
             {
-                QuitResume();
-            }
-            else
-            {
-                QuitPause();
+                if (wantToQuit)
+                {
+                    QuitResume();
+                }
+                else
+                {
+                    QuitPause();
+                }
             }
         }
     }
