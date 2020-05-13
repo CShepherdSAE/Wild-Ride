@@ -12,12 +12,14 @@ public class CarScript : MonoBehaviour
     public int obsticleDamageValue = 2;
     public int wallDamageValue = 1;
 
-    public HealthBarScript healthBar;
+    HealthBarScript healthBarScript;
+    TrafficConeScript trafficConeScript;
 
     void Start()
     {
+        healthBarScript = FindObjectOfType<HealthBarScript>();
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBarScript.SetMaxHealth(maxHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,18 +29,24 @@ public class CarScript : MonoBehaviour
             TakeDamage(obsticleDamageValue);
             Debug.Log("hit obsticle");
         }
-        else if(collision.gameObject.tag == "Wall")
+        else if (collision.gameObject.tag == "Wall")
         {
             TakeDamage(wallDamageValue);
             Debug.Log("hit wall");
         }
     }
 
+    public void HitCone()
+    {
+        TakeDamage(wallDamageValue);
+        Debug.Log("hit Cone");
+    }
+
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        healthBarScript.SetHealth(currentHealth);
 
         Debug.Log("Current health = " + currentHealth);
     }
@@ -51,7 +59,7 @@ public class CarScript : MonoBehaviour
 
             currentHealth += heal;
 
-            healthBar.SetHealth(currentHealth);
+            healthBarScript.SetHealth(currentHealth);
 
             Debug.Log("Current health = " + currentHealth);
         }

@@ -645,8 +645,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4139557, y: 1, z: 0.9995758}
-  m_Center: {x: -0.7171707, y: 0, z: 0.00044920444}
+  m_Size: {x: 0.4139557, y: 1, z: 0.8939144}
+  m_Center: {x: -0.7171707, y: 0, z: 0.0047564507}
 --- !u!114 &116953542019051571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +660,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveScript: {fileID: 0}
-  scoreScript: {fileID: 0}
   Car: {fileID: 0}
   anim: {fileID: 1462005928}
 --- !u!95 &1462005928

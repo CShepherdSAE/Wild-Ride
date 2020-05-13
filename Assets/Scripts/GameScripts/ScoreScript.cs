@@ -12,7 +12,8 @@ public class ScoreScript : MonoBehaviour
 
     public int initialScore;
     public int currentScore;
-    public int decreaseScoreAmount;
+    public int decreaseLargeScoreAmount;
+    public int decreaseSmallScoreAmount;
     public int increaseScoreAmount;
 
     public Text scoreText;
@@ -29,10 +30,16 @@ public class ScoreScript : MonoBehaviour
         Debug.Log("current Score = " + currentScore);
     }
     
+    //called when car collides with barrier obsticle
     public void LoseScore()
     {
-        currentScore -= decreaseScoreAmount;
+        currentScore -= decreaseLargeScoreAmount;
         Debug.Log("current Score = " + currentScore);
+    }
+
+    public void LoseLessScore()
+    {
+        currentScore -= decreaseSmallScoreAmount;
     }
 
     public void DisplayScore()

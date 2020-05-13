@@ -5,16 +5,17 @@ using UnityEngine;
 public class CollideScript : MonoBehaviour
 {
 
-    public MoveScript moveScript;
+    MoveScript moveScript;
     ScoreScript scoreScript;
 
-    public GameObject Car;
+    //public GameObject Car;
 
     public Animator anim;
 
     private void Start()
     {
         scoreScript = FindObjectOfType<ScoreScript>();
+        moveScript = FindObjectOfType<MoveScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
