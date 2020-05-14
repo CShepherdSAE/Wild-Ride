@@ -8,12 +8,18 @@ public class CarScript : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
 
+    public int smokeAppear;
+
     public int healValue = 1;
     public int obsticleDamageValue = 2;
     public int wallDamageValue = 1;
 
+    public GameObject smoke;
+
+    bool smokeActive = false;
+
     HealthBarScript healthBarScript;
-    TrafficConeScript trafficConeScript;
+    //TrafficConeScript trafficConeScript;
 
     void Start()
     {
@@ -49,6 +55,12 @@ public class CarScript : MonoBehaviour
         healthBarScript.SetHealth(currentHealth);
 
         Debug.Log("Current health = " + currentHealth);
+
+        if(currentHealth <= maxHealth / smokeAppear && smokeActive == false)
+        {
+            smoke.SetActive(true);
+            smokeActive = true;
+        }
     }
 
     public void HealDamage(int heal)
@@ -62,6 +74,12 @@ public class CarScript : MonoBehaviour
             healthBarScript.SetHealth(currentHealth);
 
             Debug.Log("Current health = " + currentHealth);
+        }
+
+        if (currentHealth > maxHealth / smokeAppear && smokeActive == true)
+        {
+            smoke.SetActive(false);
+            smokeActive = false;
         }
     }
 }
