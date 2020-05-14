@@ -15,6 +15,7 @@ public class CarScript : MonoBehaviour
     public int wallDamageValue = 1;
 
     public GameObject smoke;
+    //public GameObject explosion;
 
     bool smokeActive = false;
 

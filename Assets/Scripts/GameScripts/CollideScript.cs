@@ -20,10 +20,13 @@ public class CollideScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        moveScript.forwardSpeed = 0f;
-        scoreScript.LoseScore();
-        Debug.Log("speed set in Collide Script");
-        StartCoroutine(PlayAnimation());
+        if (collision.gameObject.tag == "Car")
+        {
+            moveScript.forwardSpeed = moveScript.forwardSpeed / 1.5f;
+            scoreScript.LoseScore();
+            Debug.Log("speed set in Collide Script");
+            StartCoroutine(PlayAnimation());
+        }
     }
 
     private IEnumerator PlayAnimation()

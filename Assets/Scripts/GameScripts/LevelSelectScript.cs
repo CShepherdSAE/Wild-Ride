@@ -39,7 +39,7 @@ public class LevelSelectScript : MonoBehaviour
 
     public void QuitResume()
     { 
-            quitBoxUI.SetActive(false);
-            wantToQuit = false;
+       quitBoxUI.SetActive(false);
+       wantToQuit = false;
     }
 }
