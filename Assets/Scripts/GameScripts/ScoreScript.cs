@@ -21,20 +21,20 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         currentScore = initialScore;
-        Debug.Log("current Score = " + currentScore);
+        //Debug.Log("current Score = " + currentScore);
     }
 
     public void IncreaseScore()
     {
         currentScore += increaseScoreAmount;
-        Debug.Log("current Score = " + currentScore);
+        //Debug.Log("current Score = " + currentScore);
     }
     
     //called when car collides with barrier obsticle
     public void LoseScore()
     {
         currentScore -= decreaseLargeScoreAmount;
-        Debug.Log("current Score = " + currentScore);
+        //Debug.Log("current Score = " + currentScore);
     }
 
     public void LoseLessScore()
@@ -44,7 +44,7 @@ public class ScoreScript : MonoBehaviour
 
     public void DisplayScore()
     {
-        Debug.Log("DisplayScore called");
+        //Debug.Log("DisplayScore called");
         scoreText.text = currentScore.ToString();
     }
 }

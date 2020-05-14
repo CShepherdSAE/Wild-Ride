@@ -22,7 +22,7 @@ public class CollideScript : MonoBehaviour
     {
         moveScript.forwardSpeed = 0f;
         scoreScript.LoseScore();
-        Debug.Log("speed set in Collide Script");
+       // Debug.Log("speed set in Collide Script");
         StartCoroutine(PlayAnimation());
     }
 

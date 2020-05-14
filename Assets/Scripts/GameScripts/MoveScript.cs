@@ -29,7 +29,7 @@ public class MoveScript : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        Debug.Log("start happened");
+        //Debug.Log("start happened");
     }
 
     void Update()
@@ -50,6 +50,7 @@ public class MoveScript : MonoBehaviour
     {
         this.rb.velocity = (direction * Time.deltaTime * multi);
         rb.velocity = (direction * curMoveSpeed);
+        //Debug.Log("Velocity " + rb.velocity);
     }
 
     void Speedup()

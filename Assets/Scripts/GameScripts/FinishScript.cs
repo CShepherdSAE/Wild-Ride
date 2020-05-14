@@ -27,14 +27,14 @@ public class FinishScript : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Menu loading... ");
+        //Debug.Log("Menu loading... ");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadLevelSelect()
     {
-        Debug.Log("Level Select loading... ");
+        //Debug.Log("Level Select loading... ");
         Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelect");
         PauseLevelScript.gameIsPaused = false;
@@ -42,7 +42,7 @@ public class FinishScript : MonoBehaviour
 
     public void RestartLevel()
     {
-        Debug.Log("Reloading Level... ");
+        //Debug.Log("Reloading Level... ");
         Time.timeScale = 1f;
         //change to use variable
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

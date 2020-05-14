@@ -60,7 +60,7 @@ public class PauseLevelScript : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Menu loading... ");
+        //Debug.Log("Menu loading... ");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); 
         gameIsPaused = false;
@@ -68,7 +68,7 @@ public class PauseLevelScript : MonoBehaviour
 
     public void RestartLevel()
     {
-        Debug.Log("Reloading Level... ");
+        //Debug.Log("Reloading Level... ");
         Time.timeScale = 1f;
         //change to use variable
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -85,7 +85,7 @@ public class PauseLevelScript : MonoBehaviour
     //Both pause & quit
     public void QuitGame()
     {
-        Debug.Log("Quit Game... ");
+        //Debug.Log("Quit Game... ");
         Application.Quit();
     }
 
