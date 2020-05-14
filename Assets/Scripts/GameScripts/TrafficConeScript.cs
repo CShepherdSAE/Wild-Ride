@@ -7,6 +7,8 @@ public class TrafficConeScript : MonoBehaviour
 
     public float speedDivide;
     public int destroyWaitTime = 1;
+
+    public Animator anim;
     
     [HideInInspector]
     public bool beenHit = false;
@@ -40,6 +42,7 @@ public class TrafficConeScript : MonoBehaviour
 
     IEnumerator DestroyCone()
     {
+        anim.SetBool("HitCone", true);
         yield return new WaitForSeconds(destroyWaitTime);
         Destroy(gameObject);
     }

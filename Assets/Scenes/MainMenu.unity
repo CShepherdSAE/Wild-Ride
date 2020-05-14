@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -280,7 +280,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92810
+  m_Name: pb_Mesh-14028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -485,7 +485,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92764
+  m_Name: pb_Mesh-13988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1965,7 +1965,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92818
+  m_Name: pb_Mesh-14036
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3864,7 +3864,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92804
+  m_Name: pb_Mesh-14022
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4079,7 +4079,7 @@ MonoBehaviour:
   m_text: 'Objectives -
 
 
-    Avoid Obsitcles and get to the end of the level.
+    Avoid obstacles and get to the end of the level.
 
 
     The
@@ -4438,7 +4438,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92718
+  m_Name: pb_Mesh-13942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5038,7 +5038,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92762
+  m_Name: pb_Mesh-13986
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5256,6 +5256,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125549495480032377, guid: 39eae8ac8caabe74c9d833d3b2150f1b,
+        type: 3}
+      propertyPath: smoke
+      value: 
+      objectReference: {fileID: 1851090486}
+    - target: {fileID: 3125549495480032377, guid: 39eae8ac8caabe74c9d833d3b2150f1b,
+        type: 3}
+      propertyPath: smokeAppear
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3125549495480032380, guid: 39eae8ac8caabe74c9d833d3b2150f1b,
         type: 3}
@@ -6054,7 +6064,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92752
+  m_Name: pb_Mesh-13976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7765,7 +7775,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92784
+  m_Name: pb_Mesh-14008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8670,6 +8680,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1840382262}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1851090486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8411855471732686668, guid: 39eae8ac8caabe74c9d833d3b2150f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1294064179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856722077
 GameObject:
   m_ObjectHideFlags: 0
@@ -8878,7 +8894,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92772
+  m_Name: pb_Mesh-13996
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

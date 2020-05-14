@@ -958,6 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedDivide: 0
   destroyWaitTime: 1
+  anim: {fileID: 7904368005092567167}
   beenHit: 0
 --- !u!95 &7904368005092567167
 Animator:

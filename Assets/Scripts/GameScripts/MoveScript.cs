@@ -32,16 +32,11 @@ public class MoveScript : MonoBehaviour
         Debug.Log("start happened");
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         hMovement = new Vector3(forwardSpeed, 0f, Input.GetAxis("Horizontal") * sideSpeed * -1) * Time.deltaTime;
         curMoveSpeed = forwardSpeed * speed * multi;
         Speedup();
-        //Debug.Log(Input.GetAxis("Horizontal"));
-    }
-
-    private void FixedUpdate()
-    {
         //driveforward(moveForward);
         MoveCar(hMovement);
     }
@@ -72,7 +67,7 @@ public class MoveScript : MonoBehaviour
 
             if (forwardSpeed <= minSideMove)
             {
-                sideSpeed = 0f;
+                sideSpeed = 0.5f;
             }
             else
             {
