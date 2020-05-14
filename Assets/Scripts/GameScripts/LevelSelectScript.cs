@@ -8,7 +8,7 @@ public class LevelSelectScript : MonoBehaviour
 
     public GameObject quitBoxUI;
 
-    bool wantToQuit = false;
+    //bool wantToQuit = false;
 
     public void LoadLV1()
     {
@@ -34,12 +34,12 @@ public class LevelSelectScript : MonoBehaviour
     public void QuitPause()
     {
         quitBoxUI.SetActive(true);
-        wantToQuit = true;
+        //wantToQuit = true;
     }
 
     public void QuitResume()
     { 
        quitBoxUI.SetActive(false);
-       wantToQuit = false;
+       //wantToQuit = false;
     }
 }

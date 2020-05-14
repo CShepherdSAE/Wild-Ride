@@ -32,12 +32,12 @@ public class CarScript : MonoBehaviour
     public float fovVelocityStart = 10;
     [Tooltip("The rate the FOV wil increase by. (the higher the number, the faster the FOV will increase")]
     public float fovIncreaseVal; //0.0625
-    public float fovDecreaseVal;
+    public float fovDecreaseVal; //<1
 
-    //[SerializeField]
-    //private bool allowDecFurther;
-    //[SerializeField]
-    //private bool allowIncBack;
+    [SerializeField]
+    private bool allowDecFurther;
+    [SerializeField]
+    private bool allowIncBack;
 
     MoveScript moveScript;
     public Camera cam;
@@ -193,3 +193,5 @@ public class CarScript : MonoBehaviour
 //        cam.fieldOfView -= fovDecreaseVal;
 //    }
 //}
+
+
