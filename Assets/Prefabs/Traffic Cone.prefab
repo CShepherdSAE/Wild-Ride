@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7109747293387429752}
   - component: {fileID: 2862255815684439718}
   - component: {fileID: -5198428538678642210}
+  - component: {fileID: 7904368005092567167}
   m_Layer: 0
   m_Name: Traffic Cone
   m_TagString: Cone
@@ -956,6 +957,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedDivide: 0
+  destroyWaitTime: 1
+  beenHit: 0
+--- !u!95 &7904368005092567167
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253883876332204636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7756ca42d06fb14598355bc4693cdd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5346097401613723321
 GameObject:
   m_ObjectHideFlags: 0
