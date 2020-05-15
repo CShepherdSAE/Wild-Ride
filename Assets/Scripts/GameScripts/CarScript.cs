@@ -35,7 +35,7 @@ public class CarScript : MonoBehaviour
     public float fovIncreaseVal; //0.0625
     public float fovDecreaseVal; //<1
 
-    public float topVelocity;
+    public float fovVelocityincrease;
 
     //[SerializeField]
     //private bool allowDecFurther;
@@ -54,6 +54,8 @@ public class CarScript : MonoBehaviour
 
         currentHealth = maxHealth;
         healthBarScript.SetMaxHealth(maxHealth);
+
+        fovVelocityincrease = fovVelocityStart;
     }
 
     private void FixedUpdate()
@@ -64,6 +66,7 @@ public class CarScript : MonoBehaviour
     private void Update()
     {
         carVelocity = moveScript.rb.velocity.x;
+        fovVelocityincrease = (moveScript.rb.velocity.x / 2) + fovVelocityStart;
     }
 
     void UpdateFOV()
@@ -81,11 +84,16 @@ public class CarScript : MonoBehaviour
             return;
         }
 
-        //
-        if (moveScript.rb.velocity.x <= fovVelocityStart && cam.fieldOfView > minFOV)
+        if (moveScript.rb.velocity.x <= fovVelocityincrease && cam.fieldOfView > minFOV)
         {
             cam.fieldOfView -= fovDecreaseVal;
         }
+
+        //// If the car's velocity is less than the start velocity AND the cameras' FOV is larger than the Min FOV Decrease the FOV
+        //if (moveScript.rb.velocity.x <= fovVelocityStart && cam.fieldOfView > minFOV)
+        //{
+        //    cam.fieldOfView -= fovDecreaseVal;
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
