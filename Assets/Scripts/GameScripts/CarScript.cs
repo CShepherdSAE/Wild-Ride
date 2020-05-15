@@ -38,16 +38,11 @@ public class CarScript : MonoBehaviour
     public float topVelocity;
 
     //[SerializeField]
-    //bool hitMaxFOV = false;
-
-    //[SerializeField]
     //private bool allowDecFurther;
     //[SerializeField]
     //private bool allowIncBack;
 
-    //TrafficConeScript trafficConeScript;
     HealthBarScript healthBarScript;
-    //CollideScript collideScript;
     MoveScript moveScript;
     
     public Camera cam;
@@ -55,7 +50,6 @@ public class CarScript : MonoBehaviour
     void Start()
     {
         moveScript = GetComponent<MoveScript>();
-        //collideScript = FindObjectOfType<CollideScript>();
         healthBarScript = FindObjectOfType<HealthBarScript>();
 
         currentHealth = maxHealth;
@@ -70,22 +64,10 @@ public class CarScript : MonoBehaviour
     private void Update()
     {
         carVelocity = moveScript.rb.velocity.x;
-
-        //ask anthony about
-        //if (cam.fieldOfView >= maxFOV)
-        //{
-        //    if (hitMaxFOV == false)
-        //    {
-        //        hitMaxFOV = true;
-        //    }
-
-        //    topVelocity = moveScript.rb.velocity.x;
-        //}
     }
 
     void UpdateFOV()
     {
-        
 
         // Increase the camera's FOV when the car is going fast enough AND when the fov is still lower then the max FOV
         if (moveScript.rb.velocity.x > fovVelocityStart && cam.fieldOfView <= maxFOV)
@@ -99,11 +81,11 @@ public class CarScript : MonoBehaviour
             return;
         }
 
-        // ask anthony about
-        //if (moveScript.rb.velocity.x != topVelocity && hitMaxFOV == true)
-        //{
-        //    cam.fieldOfView -= fovDecreaseVal;
-        //}
+        //
+        if (moveScript.rb.velocity.x <= fovVelocityStart && cam.fieldOfView > minFOV)
+        {
+            cam.fieldOfView -= fovDecreaseVal;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
