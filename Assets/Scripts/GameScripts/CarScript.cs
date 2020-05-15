@@ -8,19 +8,20 @@ public class CarScript : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
 
-    public int smokeAppear;
-
     public int healValue = 1;
     public int obsticleDamageValue = 2;
     public int wallDamageValue = 1;
+
+    public float carVelocity;
+
+    public int smokeAppear;
 
     public GameObject smoke;
     //public GameObject explosion;
 
     bool smokeActive = false;
 
-    HealthBarScript healthBarScript;
-    //TrafficConeScript trafficConeScript;
+
 
     [Header("Camera statistics")]
 
@@ -34,20 +35,31 @@ public class CarScript : MonoBehaviour
     public float fovIncreaseVal; //0.0625
     public float fovDecreaseVal; //<1
 
-    [SerializeField]
-    private bool allowDecFurther;
-    [SerializeField]
-    private bool allowIncBack;
+    public float topVelocity;
 
+    //[SerializeField]
+    //bool hitMaxFOV = false;
+
+    //[SerializeField]
+    //private bool allowDecFurther;
+    //[SerializeField]
+    //private bool allowIncBack;
+
+    //TrafficConeScript trafficConeScript;
+    HealthBarScript healthBarScript;
+    //CollideScript collideScript;
     MoveScript moveScript;
+    
     public Camera cam;
 
     void Start()
     {
+        moveScript = GetComponent<MoveScript>();
+        //collideScript = FindObjectOfType<CollideScript>();
         healthBarScript = FindObjectOfType<HealthBarScript>();
+
         currentHealth = maxHealth;
         healthBarScript.SetMaxHealth(maxHealth);
-        moveScript = GetComponent<MoveScript>();
     }
 
     private void FixedUpdate()
@@ -55,8 +67,26 @@ public class CarScript : MonoBehaviour
         UpdateFOV();
     }
 
+    private void Update()
+    {
+        carVelocity = moveScript.rb.velocity.x;
+
+        //ask anthony about
+        //if (cam.fieldOfView >= maxFOV)
+        //{
+        //    if (hitMaxFOV == false)
+        //    {
+        //        hitMaxFOV = true;
+        //    }
+
+        //    topVelocity = moveScript.rb.velocity.x;
+        //}
+    }
+
     void UpdateFOV()
     {
+        
+
         // Increase the camera's FOV when the car is going fast enough AND when the fov is still lower then the max FOV
         if (moveScript.rb.velocity.x > fovVelocityStart && cam.fieldOfView <= maxFOV)
         {
@@ -69,11 +99,11 @@ public class CarScript : MonoBehaviour
             return;
         }
 
-        // If the car's velocity is smaller then the minimum velocity required for FOV increase AND the fov is larger then the min FOV, reduce the FOV
-        if (moveScript.rb.velocity.x <= fovVelocityStart && cam.fieldOfView > minFOV)
-        {
-            cam.fieldOfView -= fovDecreaseVal;
-        }
+        // ask anthony about
+        //if (moveScript.rb.velocity.x != topVelocity && hitMaxFOV == true)
+        //{
+        //    cam.fieldOfView -= fovDecreaseVal;
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -81,19 +111,19 @@ public class CarScript : MonoBehaviour
         if (collision.gameObject.tag == "Obsticle")
         {
             TakeDamage(obsticleDamageValue);
-            Debug.Log("hit obsticle");
+            //Debug.Log("hit obsticle");
         }
         else if (collision.gameObject.tag == "Wall")
         {
             TakeDamage(wallDamageValue);
-            Debug.Log("hit wall");
+            //Debug.Log("hit wall");
         }
     }
 
     public void HitCone()
     {
         TakeDamage(wallDamageValue);
-        Debug.Log("hit Cone");
+        //Debug.Log("hit Cone");
     }
 
     void TakeDamage(int damage)
@@ -102,7 +132,7 @@ public class CarScript : MonoBehaviour
 
         healthBarScript.SetHealth(currentHealth);
 
-        Debug.Log("Current health = " + currentHealth);
+        //Debug.Log("Current health = " + currentHealth);
 
         if(currentHealth <= maxHealth / smokeAppear && smokeActive == false)
         {
@@ -115,13 +145,13 @@ public class CarScript : MonoBehaviour
     {  
         if(currentHealth < maxHealth)
         {
-            Debug.Log("heal if statment entered");
+            //Debug.Log("heal if statment entered");
 
             currentHealth += heal;
 
             healthBarScript.SetHealth(currentHealth);
 
-            Debug.Log("Current health = " + currentHealth);
+            //Debug.Log("Current health = " + currentHealth);
         }
 
         if (currentHealth > maxHealth / smokeAppear && smokeActive == true)

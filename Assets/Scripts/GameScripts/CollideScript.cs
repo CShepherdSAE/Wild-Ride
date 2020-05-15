@@ -7,8 +7,12 @@ public class CollideScript : MonoBehaviour
 
     MoveScript moveScript;
     ScoreScript scoreScript;
+    //CarScript carScript;
 
-    //public GameObject Car;
+
+
+    [SerializeField]
+    bool hitObstical =  false;
 
     public Animator anim;
 
@@ -16,15 +20,17 @@ public class CollideScript : MonoBehaviour
     {
         scoreScript = FindObjectOfType<ScoreScript>();
         moveScript = FindObjectOfType<MoveScript>();
+        //carScript = FindObjectOfType<CarScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Car")
+        if (collision.gameObject.tag == "Car" && !hitObstical)
         {
-            moveScript.forwardSpeed = moveScript.forwardSpeed / 1.5f;
+            hitObstical = true;
+            moveScript.forwardSpeed = moveScript.forwardSpeed / 2f;
             scoreScript.LoseScore();
-            Debug.Log("speed set in Collide Script");
+            //Debug.Log("speed set in Collide Script");
             StartCoroutine(PlayAnimation());
         }
     }

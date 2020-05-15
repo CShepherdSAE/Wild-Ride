@@ -29,7 +29,7 @@ public class MoveScript : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        Debug.Log("start happened");
+        //Debug.Log("start happened");
     }
 
     private void FixedUpdate()
