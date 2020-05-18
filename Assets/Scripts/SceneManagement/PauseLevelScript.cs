@@ -92,7 +92,7 @@ public class PauseLevelScript : MonoBehaviour
     //quit UI
 
     //pauseing the game by directly pressing the escape key
-    public void QuitPause()
+    void QuitPause()
     {
         quitBoxUI.SetActive(true);
         Time.timeScale = 0f;

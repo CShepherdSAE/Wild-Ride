@@ -37,6 +37,8 @@ public class CarScript : MonoBehaviour
 
     public float fovVelocityincrease;
 
+    bool minFOVReached = false;
+
     //[SerializeField]
     //private bool allowDecFurther;
     //[SerializeField]
@@ -65,8 +67,18 @@ public class CarScript : MonoBehaviour
 
     private void Update()
     {
+
         carVelocity = moveScript.rb.velocity.x;
-        fovVelocityincrease = (moveScript.rb.velocity.x / 2) + fovVelocityStart;
+
+        if (!minFOVReached && moveScript.rb.velocity.x > fovVelocityStart)
+        {
+            minFOVReached = true;
+        }
+        
+        if (minFOVReached)
+        {
+            fovVelocityincrease = (moveScript.rb.velocity.x / 2) + fovVelocityStart;
+        }
     }
 
     void UpdateFOV()
