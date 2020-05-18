@@ -5,11 +5,12 @@ using UnityEngine;
 public class CollideScript : MonoBehaviour
 {
 
+    public bool isInfiniteMode = false;
+
     MoveScript moveScript;
     ScoreScript scoreScript;
+    SpawnerScript spawnerScript;
     //CarScript carScript;
-
-
 
     [SerializeField]
     bool hitObstical =  false;
@@ -20,6 +21,7 @@ public class CollideScript : MonoBehaviour
     {
         scoreScript = FindObjectOfType<ScoreScript>();
         moveScript = FindObjectOfType<MoveScript>();
+        spawnerScript = FindObjectOfType<SpawnerScript>();
         //carScript = FindObjectOfType<CarScript>();
     }
 
@@ -29,7 +31,14 @@ public class CollideScript : MonoBehaviour
         {
             hitObstical = true;
             moveScript.forwardSpeed = moveScript.forwardSpeed / 2f;
-            scoreScript.LoseScore();
+            if (isInfiniteMode)
+            {
+                spawnerScript.startTimeBtwSpawn = spawnerScript.maxTime;
+            }
+            else
+            {
+                scoreScript.LoseScore();
+            }
             //Debug.Log("speed set in Collide Script");
             StartCoroutine(PlayAnimation());
         }
