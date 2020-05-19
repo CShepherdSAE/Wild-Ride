@@ -20,6 +20,11 @@ public class LevelSelectScript : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void LoadInfiniteMode()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4055,7 +4055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 332.2, y: 0}
+  m_AnchoredPosition: {x: 332.25, y: 25}
   m_SizeDelta: {x: -664.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1043219733
@@ -4082,8 +4082,12 @@ MonoBehaviour:
     Avoid obstacles and get to the end of the level.
 
 
-    The
-    less damage the player takes, the higher score they will get'
+    Pick
+    up coins to increase your score and health if your about to lose.
+
+
+    The less
+    damage the player takes, the higher score they will get'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4128,7 +4132,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 192
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4149,15 +4153,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 22.377195, y: 26.852562, z: 41.04135, w: 24.614866}
+  m_margin: {x: 13.29025, y: 29.124279, z: 2.422136, w: 24.614866}
   m_textInfo:
     textComponent: {fileID: 1043219733}
-    characterCount: 128
+    characterCount: 200
     spriteCount: 0
-    spaceCount: 25
-    wordCount: 24
+    spaceCount: 40
+    wordCount: 38
     linkCount: 0
-    lineCount: 8
+    lineCount: 12
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

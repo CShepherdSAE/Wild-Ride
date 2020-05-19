@@ -104,10 +104,10 @@ public class CarScript : MonoBehaviour
             return;
         }
 
-        if (moveScript.rb.velocity.x <= fovVelocityincrease && cam.fieldOfView > minFOV)
-        {
-            cam.fieldOfView -= fovDecreaseVal;
-        }
+        //if (moveScript.rb.velocity.x <= fovVelocityincrease && cam.fieldOfView > minFOV)
+        //{
+        //    cam.fieldOfView -= fovDecreaseVal;
+        //}
 
         //// If the car's velocity is less than the start velocity AND the cameras' FOV is larger than the Min FOV Decrease the FOV
         //if (moveScript.rb.velocity.x <= fovVelocityStart && cam.fieldOfView > minFOV)

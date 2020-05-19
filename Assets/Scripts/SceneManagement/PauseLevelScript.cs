@@ -76,6 +76,13 @@ public class PauseLevelScript : MonoBehaviour
         gameIsPaused = false;
     }
 
+    public void LoadLevelSelect()
+    {
+        //Debug.Log("Level Select loading... ");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LevelSelect");
+    }
+
     public void QuitFromPause()
     {
         quitBoxUI.SetActive(true);
