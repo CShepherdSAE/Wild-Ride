@@ -10,10 +10,10 @@ public class CollideScript : MonoBehaviour
     MoveScript moveScript;
     ScoreScript scoreScript;
     SpawnerScript spawnerScript;
-    //CarScript carScript;
+    InfiniScoreScript infiniScoreScript;
+    CarScript carScript;
 
-    [SerializeField]
-    bool hitObstical =  false;
+    public bool hitObstical =  false;
 
     public Animator anim;
 
@@ -22,7 +22,8 @@ public class CollideScript : MonoBehaviour
         scoreScript = FindObjectOfType<ScoreScript>();
         moveScript = FindObjectOfType<MoveScript>();
         spawnerScript = FindObjectOfType<SpawnerScript>();
-        //carScript = FindObjectOfType<CarScript>();
+        infiniScoreScript = FindObjectOfType<InfiniScoreScript>();
+        carScript = FindObjectOfType<CarScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,12 +35,14 @@ public class CollideScript : MonoBehaviour
             if (isInfiniteMode)
             {
                 spawnerScript.startTimeBtwSpawn = spawnerScript.maxTime;
+                infiniScoreScript.negativeScore += -250f;
             }
             else
             {
                 scoreScript.LoseScore();
             }
             //Debug.Log("speed set in Collide Script");
+            carScript.HitBarrier();
             StartCoroutine(PlayAnimation());
         }
     }

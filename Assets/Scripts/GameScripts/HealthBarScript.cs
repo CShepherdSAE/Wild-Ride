@@ -10,6 +10,15 @@ public class HealthBarScript : MonoBehaviour
 
     public Slider slider;
 
+    CollideScript collideScript;
+    InfiniScoreScript infiniScoreScript;
+
+    private void Start()
+    {
+        collideScript = FindObjectOfType<CollideScript>();
+        infiniScoreScript = FindObjectOfType<InfiniScoreScript>();
+    }
+
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;
@@ -23,6 +32,10 @@ public class HealthBarScript : MonoBehaviour
 
         if (health <= 0)
         {
+            if(collideScript.isInfiniteMode == true)
+            {
+                infiniScoreScript.AddDistanceToScore();
+            }
             losePanel.SetActive(true);
             Time.timeScale = 0;
         }

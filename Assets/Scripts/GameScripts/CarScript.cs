@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class CarScript : MonoBehaviour
 {
+    
+    [Header("Car Velocity")]
+    public float carVelocity;
 
+
+    [Header("Health & Damage")]
     public int maxHealth = 20;
     public int currentHealth;
-
     public int healValue = 1;
     public int obsticleDamageValue = 2;
     public int wallDamageValue = 1;
 
-    public float carVelocity;
 
+    [Header("VFXs")]
     public int smokeAppear;
 
     public GameObject smoke;
     //public GameObject explosion;
 
     bool smokeActive = false;
-
 
 
     [Header("Camera statistics")]
@@ -45,6 +48,7 @@ public class CarScript : MonoBehaviour
     //private bool allowIncBack;
 
     HealthBarScript healthBarScript;
+    //CollideScript collideScript;
     MoveScript moveScript;
     
     public Camera cam;
@@ -52,6 +56,7 @@ public class CarScript : MonoBehaviour
     void Start()
     {
         moveScript = GetComponent<MoveScript>();
+        //collideScript = FindObjectOfType<CollideScript>();
         healthBarScript = FindObjectOfType<HealthBarScript>();
 
         currentHealth = maxHealth;
@@ -110,16 +115,17 @@ public class CarScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Obsticle")
-        {
-            TakeDamage(obsticleDamageValue);
-            //Debug.Log("hit obsticle");
-        }
-        else if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall")
         {
             TakeDamage(wallDamageValue);
             //Debug.Log("hit wall");
         }
+    }
+
+    public void HitBarrier()
+    {
+        TakeDamage(obsticleDamageValue);
+        //Debug.Log("hit obsticle");
     }
 
     public void HitCone()
