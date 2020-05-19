@@ -42,21 +42,24 @@ public class CarScript : MonoBehaviour
 
     bool minFOVReached = false;
 
+    public Camera cam;
+
     //[SerializeField]
     //private bool allowDecFurther;
     //[SerializeField]
     //private bool allowIncBack;
 
+    [Header("Other")]
+
+    public bool isInfiniteMode = false;
+
     HealthBarScript healthBarScript;
-    //CollideScript collideScript;
     MoveScript moveScript;
     
-    public Camera cam;
 
     void Start()
     {
         moveScript = GetComponent<MoveScript>();
-        //collideScript = FindObjectOfType<CollideScript>();
         healthBarScript = FindObjectOfType<HealthBarScript>();
 
         currentHealth = maxHealth;

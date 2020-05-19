@@ -10,12 +10,14 @@ public class HealthBarScript : MonoBehaviour
 
     public Slider slider;
 
-    CollideScript collideScript;
+    //public bool isInfiniteMode;
+
+    CarScript carScript;
     InfiniScoreScript infiniScoreScript;
 
     private void Start()
     {
-        collideScript = FindObjectOfType<CollideScript>();
+        carScript = FindObjectOfType<CarScript>();
         infiniScoreScript = FindObjectOfType<InfiniScoreScript>();
     }
 
@@ -32,12 +34,15 @@ public class HealthBarScript : MonoBehaviour
 
         if (health <= 0)
         {
-            if(collideScript.isInfiniteMode == true)
+            if(carScript.isInfiniteMode == true)
             {
                 infiniScoreScript.AddDistanceToScore();
             }
-            losePanel.SetActive(true);
-            Time.timeScale = 0;
+            else
+            {
+                losePanel.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
     }
 }

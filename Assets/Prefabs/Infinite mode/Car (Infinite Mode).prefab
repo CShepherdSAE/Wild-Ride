@@ -4220,12 +4220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785ab32ee326b2a4ca4272e54833905a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carVelocity: 0
   maxHealth: 30
   currentHealth: 0
   healValue: 1
   obsticleDamageValue: 2
   wallDamageValue: 1
-  carVelocity: 0
   smokeAppear: 4
   smoke: {fileID: 8411855471732686668}
   minFOV: 60
@@ -13482,8 +13482,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07563ec238484d4438aa2e43ca47dd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsticle: {fileID: 0}
+  obsticlePatterns: []
   startTimeBtwSpawn: 0
+  decreaseTime: 0
+  maxTime: 10
+  minTime: 3.5
+  startSpawning: 0
+  startSpawningTime: 5
 --- !u!1 &8411855471732686668
 GameObject:
   m_ObjectHideFlags: 0
@@ -13709,8 +13714,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 25, z: 100}
-  m_Center: {x: 0.00003051758, y: 0, z: 0}
+  m_Size: {x: 25.758755, y: 25, z: 100.00091}
+  m_Center: {x: -12.379347, y: 0, z: 0}
 --- !u!114 &8437299350570274620
 MonoBehaviour:
   m_ObjectHideFlags: 0

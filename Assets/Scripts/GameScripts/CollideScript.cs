@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollideScript : MonoBehaviour
 {
 
-    public bool isInfiniteMode = false;
+    //public bool isInfiniteMode = false;
 
     MoveScript moveScript;
     ScoreScript scoreScript;
@@ -32,7 +32,7 @@ public class CollideScript : MonoBehaviour
         {
             hitObstical = true;
             moveScript.forwardSpeed = moveScript.forwardSpeed / 2f;
-            if (isInfiniteMode)
+            if (carScript.isInfiniteMode)
             {
                 spawnerScript.startTimeBtwSpawn = spawnerScript.maxTime;
                 infiniScoreScript.negativeScore += -250f;
